@@ -1,0 +1,21 @@
+# Python Cache
+__pycache__/
+*.pyc
+.DS_Store
+
+# Virtual Environments
+venv/
+env/
+
+# Datasets and Videos (CRITICAL)
+data/
+*.mp4
+*.avi
+
+# PyTorch Model Weights
+*.pt
+*.pth
+*.bin
+*.safetensors
+extracted_flir/
+*.zip
