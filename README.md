@@ -1,40 +1,40 @@
-# 🔥 Thermal-Tracking-DETR
-### *Full-Stack Object Detection for Long-Wave Infrared (LWIR) Systems*
+🔥 Thermal_web_app
+### *Real-Time Autonomous Object Detection for Infrared Systems*
 
-[![Python](https://img.shields.io/badge/Python-3.13-blue.svg)](https://www.python.org/)
-[![FastAPI](https://img.shields.io/badge/Backend-FastAPI-009688.svg)](https://fastapi.tiangolo.com/)
-[![Streamlit](https://img.shields.io/badge/Frontend-Streamlit-FF4B4B.svg)](https://streamlit.io/)
-[![Deep Learning](https://img.shields.io/badge/Model-DETR--ResNet50-orange.svg)](https://huggingface.co/docs/transformers/model_doc/detr)
+[![Python 3.13](https://img.shields.io/badge/Python-3.13-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![FastAPI](https://img.shields.io/badge/Backend-FastAPI-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
+[![Streamlit](https://img.shields.io/badge/Frontend-Streamlit-FF4B4B?logo=streamlit&logoColor=white)](https://streamlit.io/)
+[![PyTorch](https://img.shields.io/badge/AI-PyTorch-EE4C2C?logo=pytorch&logoColor=white)](https://pytorch.org/)
 
 ## 📌 Project Overview
-This project implements a full-stack **Thermal Tracking System** designed for high-accuracy object localization in zero-light and high-obscuration environments. By leveraging the **DEtection TRansformer (DETR)** architecture, the system provides robust spatial reasoning on thermal heat signatures without the need for traditional non-maximum suppression (NMS).
+This repository, **Thermal_web_app**, serves as the **Deployment & Dashboard** layer for an advanced object detection system tailored for long-wave infrared (LWIR) environments . It houses the core application logic (`api.py` and `app.py`) necessary to visualize and interact with the DETR model .
 
-The model is fine-tuned on the **Teledyne FLIR ADAS Dataset**, specializing in complex urban traffic scenarios involving vehicles and pedestrians.
+The system utilizes a **DEtection TRansformer (DETR)** architecture fine-tuned on the **Teledyne FLIR ADAS Dataset** to localize vehicles and pedestrians in challenging conditions like total darkness or smoke .
 
-### Key Features
-*   **Thermal-Specific Inference:** Optimized to process 1-channel thermal heat maps rather than standard 3-channel RGB data.
-*   **Transformer Architecture:** Implements a ResNet-50 backbone with a Transformer encoder-decoder for end-to-end detection.
-*   **Dual-Environment Deployment:** Separates the heavy-duty training logic from the lightweight, responsive web deployment.
-*   **Privacy-First Analytics:** Thermal imaging enables behavioral tracking and safety monitoring without capturing sensitive biometric details.
+> **Note:** This repository is specifically for deployment. The core training logic and model weight generation are maintained in the [Training Repository](https://github.com/Hamza237516/Thermal-Tracking-DETR) .
 
-## 🏗️ System Architecture
-The project is decoupled into two primary components to ensure modularity:
-1.  **Core Model & Training:** Developed using PyTorch and HuggingFace, with weights optimized via GPU-accelerated training loops.
-2.  **Web Interface:** A high-performance **FastAPI** backend serving predictions to an interactive **Streamlit** telemetry dashboard.
+## 🏗️ Decoupled Architecture
+To ensure high scalability, the system is split into two primary components :
+*   **Neural Backend (`api.py`):** A **FastAPI** server that hosts the **DETR-ResNet50** model and handles image preprocessing [cite: 1, 2].
+*   **Telemetry Dashboard (`app.py`):** A **Streamlit** user interface for real-time visualization, confidence filtering, and performance metrics [cite: 1, 2].
 
-## 📊 Performance Metrics
-*   **Fine-Tuning:** Trained for **15 Epochs** to achieve high-confidence bounding box precision.
-*   **Latency:** Optimized for local hardware with an average latency of **0.45 seconds** per frame.
-*   **Capacity:** Demonstrated capability to detect and track **35+ concurrent objects** in dense urban environments.
+## 🚀 Key Features
+*   **Thermal Signal Logic:** Optimized for 1-channel thermal heat maps [cite: 1, 2].
+*   **Dynamic Thresholding:** Adjust detection sensitivity via the UI sidebar [cite: 1, 2].
+*   **Performance Telemetry:** Real-time monitoring of inference latency and object identification [cite: 1, 2].
 
-## 🚀 Getting Started
+## 📊 Performance Benchmarks
+*   **Inference Latency:** ~0.45s (Benchmarked on local MacBook hardware) [cite: 1, 2].
+*   **Concurrency:** Robust localization for **35+ concurrent objects** per frame [cite: 1, 2].
+*   **Model Training:** Fine-tuned for **15 Epochs** for specialized thermal reasoning [cite: 1, 2].
 
-### Prerequisites
-*   Python 3.10+
-*   Model weights file: `thermal_detr_epoch_15.pth`
+## 🛠️ Tech Stack
+*   **Core AI:** PyTorch, HuggingFace Transformers, Timm [cite: 1, 2].
+*   **Deployment:** FastAPI, Uvicorn, Python 3.13 [cite: 1, 2].
+*   **Frontend:** Streamlit, PIL (Pillow), Requests [cite: 1, 2].
 
-### Installation & Setup
-1.  **Clone the Web Application Repository:**
+## ⚙️ Setup & Installation
+1.  **Clone the Repository:**
     ```bash
     git clone [https://github.com/Hamza237516/Thermal_web_app.git](https://github.com/Hamza237516/Thermal_web_app.git)
     cd Thermal_web_app
@@ -43,30 +43,12 @@ The project is decoupled into two primary components to ensure modularity:
     ```bash
     python3 -m venv venv
     source venv/bin/activate
-    ```
-3.  **Install Dependencies:**
-    ```bash
     pip install -r requirements.txt
     ```
-
-### Running the Application
-To launch the full-stack system, run both the API and the UI:
-
-1.  **Start the FastAPI Server:**
-    ```bash
-    uvicorn api:app --reload
-    ```
-2.  **Launch the Streamlit Dashboard:**
-    ```bash
-    streamlit run app.py
-    ```
-
-## 🛠️ Tech Stack
-*   **AI/ML:** PyTorch, HuggingFace Transformers, Timm
-*   **Backend:** FastAPI, Uvicorn
-*   **Frontend:** Streamlit
-*   **Image Processing:** OpenCV, Pillow, NumPy
+3.  **Local Execution:**
+    *   **Start Backend:** `uvicorn api:app --reload`
+    *   **Start Frontend:** `streamlit run app.py`
 
 ---
-**Developed by [Hamza Mehmood](https://github.com/Hamza237516)**  
-*Aspiring MS in Computer Science (AI/ML Focus)*
+**Developed by [Hamza Mehmood](https://github.com/Hamza237516)**
+*NIT Srinagar
