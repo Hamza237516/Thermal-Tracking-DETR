@@ -230,4 +230,4 @@ The system is divided into two distinct environments to ensure modularity and sc
 
 ---
 **Developed by [Hamza Mehmood](https://github.com/Hamza237516)**
-*NIT Alumnus | Aspiring MS in CS (AI Focus)*
+*NIT Alumnus 
