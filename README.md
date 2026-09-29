@@ -60,7 +60,7 @@ python train.py
 | Setting | Default | Flag |
 |---|---|---|
 | Epochs | 15 | `--epochs` |
-| Batch size | 2 | `--batch-size` |
+| Batch size | 8 | `--batch-size` |
 | Optimizer | AdamW | |
 | Learning rate | 1e-4 | `--lr` |
 | Data folder | `extracted_flir/FLIR_ADAS_v2` | `--data-dir` |
