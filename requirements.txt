@@ -1,18 +1,8 @@
-# PyTorch & Neural Network
+# Training dependencies
 torch>=2.0.0
 torchvision>=0.15.0
 transformers>=4.30.0
-huggingface-hub
-
-# Image & Video Processing
-opencv-python-headless>=4.8.0
+timm>=0.9.0          # ResNet-50 backbone used by Hugging Face DETR
+scipy>=1.10          # Hungarian matching inside DETR's loss
+pycocotools>=2.0.6   # reads FLIR's COCO-format annotations
 Pillow>=9.5.0
-
-# Tracking
-deep-sort-realtime>=1.3.2
-
-# Data Handling & Progress
-numpy>=1.24.0
-tqdm>=4.65.0
-pycocotools>=2.0.6
-kaggle
