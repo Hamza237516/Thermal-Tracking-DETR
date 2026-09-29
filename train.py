@@ -24,7 +24,7 @@ def parse_args(argv=None):
     parser.add_argument("--data-dir", default="extracted_flir/FLIR_ADAS_v2",
                         help="folder that contains images_thermal_train/")
     parser.add_argument("--epochs", type=int, default=15)
-    parser.add_argument("--batch-size", type=int, default=2)
+    parser.add_argument("--batch-size", type=int, default=8)
     parser.add_argument("--lr", type=float, default=1e-4)
     parser.add_argument("--output-dir", default="checkpoints",
                         help="where thermal_detr_epoch_<N>.pth files are saved")
